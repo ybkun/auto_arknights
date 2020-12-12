@@ -16,7 +16,7 @@ def get_logger(name: str, level: int = logging.DEBUG) -> logging.Logger:
     stream_handler = logging.StreamHandler(sys.stdout)
     stream_handler.setFormatter(formatter)
     stream_handler.setLevel(level)
-    file_handler = TimedRotatingFileHandler(name + ".log", when='d', interval=1, backupCount=7)
+    file_handler = TimedRotatingFileHandler(name + ".log", when='d', interval=1, backupCount=7, encoding='utf-8')
     file_handler.setFormatter(formatter)
     file_handler.setLevel(level)
     logger.addHandler(file_handler)
